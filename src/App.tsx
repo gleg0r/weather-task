@@ -6,6 +6,8 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import { useEffect } from 'react';
 import { useAppDispatch } from './store/hooks';
 import { setedUser } from './store/slices/authSlice';
+import { ICoord } from './types/weatherApi';
+import { setedCoords } from './store/slices/weatherSlice';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -13,6 +15,16 @@ function App() {
   useEffect(() => {
     const email = sessionStorage.getItem('email');
     if(email) dispatch(setedUser(email));
+    navigator.geolocation.getCurrentPosition((position) => {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      const coords: ICoord = {
+        lat: lat,
+        lon: lon,
+      };
+      
+      dispatch(setedCoords(coords));
+    });
   }, [dispatch]);
 
   return (

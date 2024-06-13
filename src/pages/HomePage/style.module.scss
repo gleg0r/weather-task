@@ -1,0 +1,8 @@
+@import '../../styles/variables.scss';
+
+.home {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: $space48;
+  padding: $space20;
+}

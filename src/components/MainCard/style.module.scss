@@ -1,0 +1,25 @@
+@import '../../styles/variables.scss';
+
+.card {
+  border-radius: $space20;
+  box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $space24;
+  padding: $space20 ;
+  &__temp {
+    @include fontStyle(96px, 500, 117px, $tempPrimary);
+  }
+  &__date {
+    @include fontStyle(40px, 400, 49px, $textPrimary);
+  }
+  &__text {
+    @include fontStyle(25px, 400, 30px, $disabledButton);
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: $space8;
+  }
+}
