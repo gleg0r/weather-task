@@ -1,0 +1,15 @@
+@import '../../../styles/variables.scss';
+
+.nav {
+  &__list {
+    @include flexCenter;
+    gap: 40px;
+  }
+  &__link {
+    @include fontStyle(20px, 500, 32px, $textPrimary);
+    transition: .3s all ease;
+    &:hover {
+      color: $primaryHover;
+    }
+  }
+}

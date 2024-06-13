@@ -1,19 +1,33 @@
 import { Routes, Route } from 'react-router-dom';
-import { HomePage } from './components/HomePage/HomePage';
+import { HomePage } from './pages/HomePage/HomePage';
 import Layout from './components/Layout/Layout';
+import SearchPage from './pages/SearchPage/SearchPage';
+import LoginPage from './pages/LoginPage/LoginPage';
+import { useEffect } from 'react';
+import { useAppDispatch } from './store/hooks';
+import { setedUser } from './store/slices/authSlice';
 
 function App() {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    const email = sessionStorage.getItem('email');
+    if(email) dispatch(setedUser(email));
+  }, [dispatch]);
+
   return (
     <>
       <div id='app'>
         <Routes>
           <Route path={'/'} element={<Layout />}>
             <Route index element={<HomePage />} />
+            <Route path={'/search'} element={<SearchPage />} />
+            <Route path={'/auth'} element={<LoginPage />} />
           </Route>
         </Routes>
       </div>
     </>
-  )
+  );
 }
 
 export default App;

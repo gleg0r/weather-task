@@ -1,0 +1,15 @@
+@import '../../../styles/variables.scss';
+
+.button {
+  outline: 0;
+  border: 0;
+  background: $buttonDefault;
+  cursor: pointer;
+  padding: $space8 $space24;
+  border-radius: $space12;
+  @include fontStyle(16px, 500, 28px, $primaryColor);
+  transition: .3s;
+  &:hover {
+    background: $primaryHover;
+  }
+}

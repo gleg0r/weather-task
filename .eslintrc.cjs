@@ -15,8 +15,8 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'semi': [
-      2,
-      'never'
+      1,
+      'always'
     ]
   },
 }

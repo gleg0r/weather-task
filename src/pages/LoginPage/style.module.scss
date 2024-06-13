@@ -1,0 +1,55 @@
+@import '../../styles/variables.scss';
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $space12;
+  }
+  &__title {
+    @include fontStyle(36px, 600, 44px, $textPrimary);
+  }
+  &__label {
+    @include fontStyle(24px, 400, 32px, $textPrimary);
+    display: flex;
+    flex-direction: column;
+    gap: $space8;
+  }
+  &__error {
+    font-size: 12px;
+    color: $inputError;
+    line-height: 14px;
+  }
+  &__input {
+    max-width: 100%;
+    border: 1px solid $textPrimary;
+    padding: $space12;
+    font-size: 16px;
+    border-radius: $space8;
+  }
+  &__submit {
+    outline: 0;
+    border: 3px solid $buttonDefault;
+    background: transparent;
+    padding: $space8 $space12;
+    @include fontStyle(16px, 600, 22px, $buttonDefault);
+    cursor: pointer;
+    transition: .3s all ease;
+    border-radius: $space8;
+    &:hover {
+      background: $buttonDefault;
+      color: $primaryColor;
+    }
+    &:disabled {
+      border: 3px solid $disabledButton;
+      cursor: not-allowed;
+      background: $disabledButton;
+      color: $primaryColor;
+    }
+  }
+}
