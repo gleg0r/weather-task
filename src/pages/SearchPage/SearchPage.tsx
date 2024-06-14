@@ -11,6 +11,8 @@ import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import { IFetchError } from '../../types/componentsTypes';
 import { useAppSelector } from '../../store/hooks';
 import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '../../store/hooks';
+import { setedShowModal } from '../../store/slices/authSlice';
 
 const SearchPage = () => {
   const { 
@@ -22,12 +24,14 @@ const SearchPage = () => {
   const { data, isLoading, isError, error }  = useGetWeatherByCityQuery(debouncedCity);
   const { user } = useAppSelector((store) => store.auth);
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if(!user) {
+      dispatch(setedShowModal(true));
       navigate('/');
     } 
-  }, [user, navigate]);
+  }, [user, navigate, dispatch]);
 
   const getErrorMessage = (error: FetchBaseQueryError | SerializedError): string => {
     if ('data' in error) {

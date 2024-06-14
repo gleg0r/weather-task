@@ -8,6 +8,7 @@ import { useAppDispatch } from './store/hooks';
 import { setedUser } from './store/slices/authSlice';
 import { ICoord } from './types/weatherApi';
 import { setedCoords } from './store/slices/weatherSlice';
+import Modal from './components/Modal/Modal';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -38,6 +39,7 @@ function App() {
           </Route>
         </Routes>
       </div>
+      <Modal />
     </>
   );
 }
