@@ -1,8 +1,20 @@
 @import '../../styles/variables.scss';
 
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 20px;
   box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
   background: rgb(255, 255, 255);
   padding: 50px 40px;
+  &__item {
+    display: flex;
+    gap: $space24;
+    align-items: center;
+    @include fontStyle(20px, 600, 17px, $textPrimary);
+    &>span {
+      @include fontStyle(24px, 500, 17px, $buttonDefault);
+    }
+  }
 }
