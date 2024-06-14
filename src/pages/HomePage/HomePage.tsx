@@ -7,12 +7,12 @@ import Loader from '../../components/Loader/Loader';
 
 export const HomePage = () => {
   const { coords } = useAppSelector((state) => state.weather);
-  const { data, isLoading } = useGetWeatherQuery(coords);
-
+  const { data, isLoading, isError } = useGetWeatherQuery(coords);
+  console.log(isLoading);
   return (
     <main className={s.home}>
       {
-        isLoading 
+        isLoading || isError
         ? <Loader />
         : (
           <>
