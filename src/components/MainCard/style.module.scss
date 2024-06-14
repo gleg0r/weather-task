@@ -8,6 +8,7 @@
   justify-content: center;
   gap: $space24;
   padding: $space20 ;
+  min-width: 300px;
   &__temp {
     @include fontStyle(96px, 500, 117px, $tempPrimary);
   }
