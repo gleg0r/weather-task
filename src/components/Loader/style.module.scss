@@ -15,5 +15,10 @@
     position: absolute;
     top: 40vh;
     left: 45vw;
+    @media (max-width: 680px) {
+      top: 40vh;
+      left: 37vw;
+    }
   }
+
 }

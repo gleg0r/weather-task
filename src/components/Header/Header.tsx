@@ -20,7 +20,7 @@ const Header: FC = () => {
   return (
     <header className={s.header}>
       <div className={s.header__logo}>
-        <img src={logo} alt="Logo" />
+        <img className={s.header__img} src={logo} alt="Logo" />
         <Link to='/'>
           <h1 className={s.header__title}>Weather</h1>
         </Link>
