@@ -1,0 +1,26 @@
+@import '../../styles/variables.scss';
+
+.search {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $space20;
+  &__label {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  &__input {
+    width: 40%;
+    min-width: 200px;
+    border: 1px solid $textPrimary;
+    padding: $space12;
+    font-size: 16px;
+    border-radius: $space8;
+    @include fontStyle(16px, 500, 22px, $textPrimary);
+    &::placeholder {
+      @include fontStyle(16px, 500, 22px, $textPrimary);
+    }
+  }
+}

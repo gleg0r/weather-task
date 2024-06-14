@@ -3,6 +3,7 @@ import { useGetWeatherQuery } from '../../store/api/localWeatherApi';
 import { useAppSelector } from '../../store/hooks';
 import MainCard from '../../components/MainCard/MainCard';
 import SubCard from '../../components/SubCard/SubCard';
+import Loader from '../../components/Loader/Loader';
 
 export const HomePage = () => {
   const { coords } = useAppSelector((state) => state.weather);
@@ -11,8 +12,8 @@ export const HomePage = () => {
   return (
     <main className={s.home}>
       {
-        true 
-        ? <h1>Loading...</h1> 
+        isLoading 
+        ? <Loader />
         : (
           <>
             <MainCard temp={data!.main.temp} time={data!.dt} city={data!.name} />

@@ -11,3 +11,11 @@ export interface ISubCardProps {
   humidity: number;
   windSpeed: number;
 }
+
+export interface IFetchError {
+  status: number;
+  data: {
+    cod: string;
+    message: string;
+  }
+}
