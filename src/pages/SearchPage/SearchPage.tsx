@@ -27,7 +27,7 @@ const SearchPage = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if(!user) {
+    if(!user && !sessionStorage.getItem('email')) {
       dispatch(setedShowModal(true));
       navigate('/');
     } 
